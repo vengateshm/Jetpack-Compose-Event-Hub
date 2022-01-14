@@ -4,4 +4,7 @@
     <string name="reset_pwd_msg">Please enter your email address to request a password reset</string>
     <string name="send">SEND</string>
     <string name="email_hint">abc@email.com</string>
+    <string name="notifications">Notifications</string>
+    <string name="empty_notifications_title">No Notifications!</string>
+    <string name="empty_notifications_message">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor</string>
 </resources>

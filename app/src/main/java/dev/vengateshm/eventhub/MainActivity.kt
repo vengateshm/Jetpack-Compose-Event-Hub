@@ -8,6 +8,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import dev.vengateshm.eventhub.presentation.notifications.NotificationListScreen
 import dev.vengateshm.eventhub.presentation.reset_password.ResetPasswordScreen
 import dev.vengateshm.eventhub.ui.theme.EventHubTheme
 
@@ -18,7 +19,7 @@ class MainActivity : ComponentActivity() {
             EventHubTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    ResetPasswordScreen()
+                    NotificationListScreen()
                 }
             }
         }
