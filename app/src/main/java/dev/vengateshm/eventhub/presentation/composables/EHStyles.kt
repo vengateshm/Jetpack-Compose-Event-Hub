@@ -5,6 +5,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import dev.vengateshm.eventhub.ui.theme.EHTitleBarColor
+import dev.vengateshm.eventhub.ui.theme.EmptyStateTextColor
 import dev.vengateshm.eventhub.ui.theme.HintTextColor
 import dev.vengateshm.eventhub.ui.theme.PrimaryBlack1
 
@@ -35,5 +36,17 @@ val HintTextStyle = TextStyle(
 val TextFieldTextStyle = TextStyle(
     color = PrimaryBlack1,
     fontSize = 14.sp,
+    fontWeight = FontWeight(400)
+)
+
+val EmptyStateTitleStyle = TextStyle(
+    color = EmptyStateTextColor,
+    fontSize = 18.sp,
+    fontWeight = FontWeight(400)
+)
+
+val EmptyStateMessageStyle = TextStyle(
+    color = EmptyStateTextColor,
+    fontSize = 16.sp,
     fontWeight = FontWeight(400)
 )
