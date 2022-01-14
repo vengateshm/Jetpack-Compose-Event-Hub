@@ -1,4 +1,4 @@
-package dev.vengateshm.eventhub.presentation
+package dev.vengateshm.eventhub.presentation.splash
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
