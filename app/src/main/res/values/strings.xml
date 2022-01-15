@@ -9,4 +9,7 @@
     <string name="empty_notifications_message">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor</string>
     <string name="accept">Accept</string>
     <string name="reject">Reject</string>
+    <string name="verification">Verification</string>
+    <string name="verification_msg">We’ve send you the verification code on +1 2620 0323 7631</string>
+    <string name="btn_txt_continue">CONTINUE</string>
 </resources>

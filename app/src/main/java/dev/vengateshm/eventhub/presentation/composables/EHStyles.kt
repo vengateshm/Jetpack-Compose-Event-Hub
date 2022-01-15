@@ -65,3 +65,15 @@ val EHFilledButtonTextStyle = TextStyle(
     fontSize = 14.sp,
     fontWeight = FontWeight(400)
 )
+
+val OtpTextFieldHintTextStyle = TextStyle(
+    color = HintTextColor,
+    fontSize = 18.sp,
+    fontWeight = FontWeight(400)
+)
+
+val OtpTextFieldTextStyle = TextStyle(
+    color = PrimaryBlack1,
+    fontSize = 18.sp,
+    fontWeight = FontWeight(400)
+)
