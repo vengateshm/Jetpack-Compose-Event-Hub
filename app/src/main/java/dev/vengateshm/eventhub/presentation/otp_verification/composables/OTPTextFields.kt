@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.dp
 fun OTPTextFields(
     modifier: Modifier = Modifier,
     length: Int,
-    onFilled: (code: String) -> Unit
+    onFilled: (code: String) -> Unit,
 ) {
     var code: List<Char> by remember { mutableStateOf(listOf()) }
     val focusRequesters: List<FocusRequester> = remember {
@@ -42,7 +42,9 @@ fun OTPTextFields(
                     .width(50.dp)
                     .height(50.dp)
                     .focusOrder(focusRequester = focusRequesters[index]) {
-                        focusRequesters[index + 1].requestFocus()
+                        if (index < length - 1) {
+                            focusRequesters[index + 1].requestFocus()
+                        }
                     },
                 shape = RoundedCornerShape(8.dp),
                 textStyle = MaterialTheme.typography.body2.copy(
