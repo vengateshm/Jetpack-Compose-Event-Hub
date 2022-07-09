@@ -1,5 +1,6 @@
 package dev.vengateshm.eventhub.presentation.reset_password
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
@@ -11,24 +12,28 @@ import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import dev.vengateshm.eventhub.R
 import dev.vengateshm.eventhub.presentation.composables.*
-import dev.vengateshm.eventhub.ui.theme.TextFieldOutlineColor
+import dev.vengateshm.eventhub.presentation.ui.theme.TextFieldOutlineColor
 
 @Composable
-fun ResetPasswordScreen() {
+fun ResetPasswordScreen(navController: NavController) {
+    BackHandler(onBack = {
+        navController.navigateUp()
+    })
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(color = Color.White)
     ) {
-        IconButton(onClick = { /*TODO*/ }) {
+        IconButton(onClick = { navController.navigateUp() }) {
             Icon(
                 painter = painterResource(id = R.drawable.ic_back_arrow),
                 contentDescription = "Back arrow"
@@ -70,13 +75,12 @@ fun ResetPasswordScreen() {
                     .padding(horizontal = 12.dp, vertical = 8.dp)
             )
             VertiSpace(dp = 32.dp)
-            EHButton(text = stringResource(id = R.string.send), showArrow = true)
+            EHButton(
+                modifier = Modifier
+                    .fillMaxWidth(0.85f)
+                    .align(Alignment.CenterHorizontally),
+                text = stringResource(id = R.string.send),
+                showArrow = true)
         }
     }
-}
-
-@Preview
-@Composable
-fun ResetPasswordScreenPreview() {
-    ResetPasswordScreen()
 }

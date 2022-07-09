@@ -1,4 +1,4 @@
-package dev.vengateshm.eventhub.ui.theme
+package dev.vengateshm.eventhub.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
@@ -17,3 +17,9 @@ val NotificationMessageTextColor = Color(0XFF060518)
 val NotificationDateTextColor = Color(0XFF3C3E56)
 val OutlinedButtonBorderColor = Color(0XFFEEEEEE)
 val OutlinedButtonTextColor = Color(0XFF706D6D)
+
+val OnBoardingTextContainer = Color(0XFF5669FF)
+
+val Color_5669FA = Color(0XFF5669FA)
+val Color_9D9898 = Color(0XFF9D9898)
+val Color_37364A = Color(0XFF37364A)

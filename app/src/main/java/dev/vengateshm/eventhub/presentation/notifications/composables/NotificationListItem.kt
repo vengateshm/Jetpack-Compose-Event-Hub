@@ -25,7 +25,7 @@ import dev.vengateshm.eventhub.R
 import dev.vengateshm.eventhub.domain.models.Notification
 import dev.vengateshm.eventhub.domain.models.NotificationType
 import dev.vengateshm.eventhub.presentation.composables.*
-import dev.vengateshm.eventhub.ui.theme.NotificationMessageTextColor
+import dev.vengateshm.eventhub.presentation.ui.theme.NotificationMessageTextColor
 
 @Composable
 fun NotificationListItem(notification: Notification) {

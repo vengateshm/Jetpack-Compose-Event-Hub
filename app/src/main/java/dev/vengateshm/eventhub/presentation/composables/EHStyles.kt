@@ -4,7 +4,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import dev.vengateshm.eventhub.ui.theme.*
+import dev.vengateshm.eventhub.presentation.ui.theme.*
 
 val EHButtonTextStyle = TextStyle(
     color = Color.White,

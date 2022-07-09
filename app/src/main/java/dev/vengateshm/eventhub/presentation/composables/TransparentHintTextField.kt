@@ -5,6 +5,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -28,9 +29,10 @@ fun TransparentHintTextField(
     singleLine: Boolean = false,
     onValueChange: (String) -> Unit,
     onFocusChange: (FocusState) -> Unit,
-    testTag: String = ""
+    testTag: String = "",
 ) {
-    Row(modifier = modifier) {
+    Row(modifier = modifier
+        .padding(vertical = 12.dp, horizontal = 12.dp)) {
         Image(painter = painterResource(id = iconRes), contentDescription = "$hint icon")
         HoriSpace(dp = 8.dp)
         Box {

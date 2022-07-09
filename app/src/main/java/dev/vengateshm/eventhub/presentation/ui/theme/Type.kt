@@ -1,4 +1,4 @@
-package dev.vengateshm.eventhub.ui.theme
+package dev.vengateshm.eventhub.presentation.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

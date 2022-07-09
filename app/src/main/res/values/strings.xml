@@ -12,4 +12,12 @@
     <string name="verification">Verification</string>
     <string name="verification_msg">We’ve send you the verification code on +1 2620 0323 7631</string>
     <string name="btn_txt_continue">CONTINUE</string>
+    <string name="sign_up">Sign up</string>
+    <string name="sign_in">Sign in</string>
+    <string name="full_name_hint">Full name</string>
+    <string name="your_password_hint">Your password</string>
+    <string name="confirm_password_hint">Confirm password</string>
+    <string name="btn_txt_sign_up">SIGN UP</string>
+    <string name="btn_txt_sign_in">SIGN IN</string>
+    <string name="event_hub">EventHub</string>
 </resources>
