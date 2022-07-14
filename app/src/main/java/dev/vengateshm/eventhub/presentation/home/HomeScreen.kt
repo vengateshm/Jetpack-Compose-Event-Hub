@@ -5,16 +5,17 @@ import androidx.compose.material.ModalDrawer
 import androidx.compose.material.rememberDrawerState
 import androidx.compose.runtime.*
 import androidx.compose.ui.graphics.Color
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import dev.vengateshm.eventhub.presentation.home.drawer.Drawer
 import dev.vengateshm.eventhub.presentation.home.drawer.DrawerItem
+import dev.vengateshm.eventhub.presentation.notifications.NotificationListScreen
 import dev.vengateshm.eventhub.presentation.ui.theme.Screen
 import kotlinx.coroutines.launch
 
 @Composable
-fun HomeScreen(navController: NavHostController, onLogoutClick: () -> Unit) {
+fun HomeScreen(onLogoutClick: () -> Unit) {
     val coroutineScope = rememberCoroutineScope()
     val drawerMenuList = remember {
         DrawerItem.getDrawerMenuList()
@@ -36,6 +37,8 @@ fun HomeScreen(navController: NavHostController, onLogoutClick: () -> Unit) {
             drawerState.open()
         }
     }
+
+    val navController = rememberNavController()
 
     ModalDrawer(
         drawerState = drawerState,
@@ -116,5 +119,27 @@ fun HomeScreen(navController: NavHostController, onLogoutClick: () -> Unit) {
                 },
             )
         }) {
+        NavHost(
+            navController = navController,
+            startDestination = Screen.Home.route) {
+            composable(route = Screen.Home.route) {
+                Home(
+                    onToolBarMenuIconClick = {
+                        openDrawer()
+                    },
+                    onNotificationIconClick = {
+                        navController.navigate(
+                            route = Screen.Notification.route
+                        )/* {
+                            popUpTo(navController.graph.startDestinationRoute!!)
+                            launchSingleTop = true
+                        }*/
+                    }
+                )
+            }
+            composable(route = Screen.Notification.route) {
+                NotificationListScreen()
+            }
+        }
     }
 }
