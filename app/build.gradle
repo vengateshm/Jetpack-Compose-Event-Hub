@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
@@ -59,6 +60,10 @@ dependencies {
 
     implementation "androidx.compose.material:material-icons-extended:$compose_version"
     implementation "androidx.hilt:hilt-navigation-compose:1.0.0"
+    implementation "com.google.maps.android:maps-compose:1.0.0"
+    implementation 'androidx.compose.foundation:foundation:1.1.1'
+    // Google Maps
+    implementation "com.google.android.gms:play-services-maps:18.0.2"
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

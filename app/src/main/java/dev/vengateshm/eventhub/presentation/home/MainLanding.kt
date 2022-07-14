@@ -157,7 +157,7 @@ fun MainLanding(onLogoutClick: () -> Unit) {
                 EventListScreen(navController = navController,)
             }
             composable(route = Screen.Map.route) {
-                MapScreen()
+                MapScreen(navController = navController,)
             }
             composable(route = Screen.MyProfile.route) {
                 ProfileScreen()

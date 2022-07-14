@@ -62,7 +62,6 @@ fun EventListScreen(navController: NavController) {
 @Composable
 fun EventListItem(event: Event) {
     Row(modifier = Modifier
-        .fillMaxSize()
         .background(
             color = Color.White,
             shape = RoundedCornerShape(16.dp)
@@ -73,15 +72,18 @@ fun EventListItem(event: Event) {
             painter = painterResource(id = event.thumbImgRes),
             contentDescription = "${event.title} thumb")
         HoriSpace(dp = 16.dp)
-        Column() {
-            Text(
+        Column(modifier = Modifier
+            .fillMaxWidth()) {
+            Text(modifier = Modifier
+                .fillMaxWidth(),
                 text = event.date,
                 fontSize = 13.sp,
                 fontWeight = FontWeight(400),
                 color = Color_5669FF
             )
             VertiSpace(dp = 6.dp)
-            Text(
+            Text(modifier = Modifier
+                .fillMaxWidth(),
                 text = event.title,
                 fontSize = 15.sp,
                 fontWeight = FontWeight(500),
@@ -89,6 +91,8 @@ fun EventListItem(event: Event) {
             )
             VertiSpace(dp = 6.dp)
             Row(
+                modifier = Modifier
+                    .fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
