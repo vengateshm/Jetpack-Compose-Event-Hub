@@ -4,7 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/VengateshM/AndroidProjects/JetPackCompose/EventHub/app/src/main/res/drawable/ic_btn_arrow_circled.xml" value="0.17864583333333334" />
+        <entry key="..\:/VengateshM/Projects/Android/Declarative/EventHub/app/src/main/res/drawable/ic_bottom_nav_compass.xml" value="0.185" />
+        <entry key="..\:/VengateshM/Projects/Android/Declarative/EventHub/app/src/main/res/drawable/ic_bottom_nav_map.xml" value="0.185" />
+        <entry key="..\:/VengateshM/Projects/Android/Declarative/EventHub/app/src/main/res/drawable/ic_bottom_nav_profile.xml" value="0.185" />
         <entry key="..\:/VengateshM/Projects/Android/Declarative/EventHub/app/src/main/res/drawable/ic_drawer_upgrade_icon.xml" value="0.177" />
+        <entry key="..\:/VengateshM/Projects/Android/Declarative/EventHub/app/src/main/res/drawable/ic_location_event.xml" value="0.185" />
+        <entry key="..\:/VengateshM/Projects/Android/Declarative/EventHub/app/src/main/res/drawable/ic_locaton_event.xml" value="0.15" />
       </map>
     </option>
   </component>

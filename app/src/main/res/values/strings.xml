@@ -20,4 +20,6 @@
     <string name="btn_txt_sign_up">SIGN UP</string>
     <string name="btn_txt_sign_in">SIGN IN</string>
     <string name="event_hub">EventHub</string>
+    <string name="events">Events</string>
+    <string name="no_events">No Events</string>
 </resources>

@@ -1,21 +1,28 @@
 package dev.vengateshm.eventhub.presentation.home
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.material.DrawerValue
 import androidx.compose.material.ModalDrawer
+import androidx.compose.material.Scaffold
 import androidx.compose.material.rememberDrawerState
 import androidx.compose.runtime.*
 import androidx.compose.ui.graphics.Color
+import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import dev.vengateshm.eventhub.presentation.event.EventListScreen
+import dev.vengateshm.eventhub.presentation.home.bottomNav.BottomBar
 import dev.vengateshm.eventhub.presentation.home.drawer.Drawer
 import dev.vengateshm.eventhub.presentation.home.drawer.DrawerItem
+import dev.vengateshm.eventhub.presentation.map.MapScreen
 import dev.vengateshm.eventhub.presentation.notifications.NotificationListScreen
+import dev.vengateshm.eventhub.presentation.profile.ProfileScreen
 import dev.vengateshm.eventhub.presentation.ui.theme.Screen
 import kotlinx.coroutines.launch
 
 @Composable
-fun HomeScreen(onLogoutClick: () -> Unit) {
+fun MainLanding(onLogoutClick: () -> Unit) {
     val coroutineScope = rememberCoroutineScope()
     val drawerMenuList = remember {
         DrawerItem.getDrawerMenuList()
@@ -39,6 +46,14 @@ fun HomeScreen(onLogoutClick: () -> Unit) {
     }
 
     val navController = rememberNavController()
+
+    BackHandler(
+        enabled = true,
+        onBack = {
+            if (drawerState.isOpen) {
+                closeDrawer()
+            }
+        })
 
     ModalDrawer(
         drawerState = drawerState,
@@ -121,9 +136,11 @@ fun HomeScreen(onLogoutClick: () -> Unit) {
         }) {
         NavHost(
             navController = navController,
-            startDestination = Screen.Home.route) {
+            startDestination = Screen.Home.route
+        ) {
             composable(route = Screen.Home.route) {
-                Home(
+                ExploreScreen(
+                    navController = navController,
                     onToolBarMenuIconClick = {
                         openDrawer()
                     },
@@ -134,12 +151,62 @@ fun HomeScreen(onLogoutClick: () -> Unit) {
                             popUpTo(navController.graph.startDestinationRoute!!)
                             launchSingleTop = true
                         }*/
-                    }
-                )
+                    })
+            }
+            composable(route = Screen.Events.route) {
+                EventListScreen(navController = navController,)
+            }
+            composable(route = Screen.Map.route) {
+                MapScreen()
+            }
+            composable(route = Screen.MyProfile.route) {
+                ProfileScreen()
             }
             composable(route = Screen.Notification.route) {
-                NotificationListScreen()
+                NotificationListScreen(navController = navController,)
             }
         }
+    }
+}
+
+@Composable
+fun ExploreScreen(
+    navController: NavController,
+    onToolBarMenuIconClick: () -> Unit,
+    onNotificationIconClick: () -> Unit,
+) {
+    Scaffold(
+        topBar = {
+            HomeToolBar(
+                onToolBarMenuIconClick = {
+                    onToolBarMenuIconClick()
+                },
+                onNotificationIconClick = {
+                    onNotificationIconClick()
+                }
+            )
+        },
+        bottomBar = {
+            BottomBar(
+                navController = navController,
+                onBottomBarItemClick = {
+                    when (it.title) {
+                        "Explore" -> {
+                            navController.navigate(Screen.Home.route)
+                        }
+                        "Events" -> {
+                            navController.navigate(Screen.Events.route)
+                        }
+                        "Map" -> {
+                            navController.navigate(Screen.Map.route)
+                        }
+                        "Profile" -> {
+                            navController.navigate(Screen.MyProfile.route)
+                        }
+                    }
+                })
+        }
+    ) {
+
     }
 }

@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import dev.vengateshm.eventhub.R
 import dev.vengateshm.eventhub.data.repositories.NotificationRepositoryImpl
 import dev.vengateshm.eventhub.presentation.composables.EHEmptyState
@@ -19,7 +20,7 @@ import dev.vengateshm.eventhub.presentation.composables.VertiSpace
 import dev.vengateshm.eventhub.presentation.notifications.composables.NotificationListItem
 
 @Composable
-fun NotificationListScreen() {
+fun NotificationListScreen(navController: NavController) {
     val repo = NotificationRepositoryImpl()
     val notificationList = repo.getNotifications()
 
@@ -28,7 +29,11 @@ fun NotificationListScreen() {
             .fillMaxSize()
             .background(color = Color.White)
     ) {
-        EHTitleBarMore(title = stringResource(id = R.string.notifications))
+        EHTitleBarMore(
+            title = stringResource(id = R.string.notifications),
+            onBackArrowClick = {
+                navController.navigateUp()
+            })
         if (notificationList.isEmpty()) {
             EHEmptyState(
                 imageRes = R.drawable.empty_notifications,

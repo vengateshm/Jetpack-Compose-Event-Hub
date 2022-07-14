@@ -44,7 +44,7 @@ fun NotificationListItem(notification: Notification) {
                 )
                 .clip(CircleShape)
         )
-        HoriSpace(dp = 8.dp)
+        HoriSpace(dp = 16.dp)
         Column(modifier = Modifier.weight(1f)) {
             Text(
                 text = buildAnnotatedString {

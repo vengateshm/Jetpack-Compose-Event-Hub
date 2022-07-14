@@ -13,12 +13,15 @@ import androidx.compose.ui.unit.dp
 import dev.vengateshm.eventhub.R
 
 @Composable
-fun EHTitleBarMore(title: String) {
+fun EHTitleBarMore(
+    title: String,
+    onBackArrowClick: () -> Unit,
+) {
     Row(
         modifier = Modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        IconButton(onClick = { /*TODO*/ }) {
+        IconButton(onClick = { onBackArrowClick() }) {
             Icon(
                 painter = painterResource(id = R.drawable.ic_back_arrow),
                 contentDescription = "Back arrow"

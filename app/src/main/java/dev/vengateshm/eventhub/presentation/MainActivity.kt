@@ -11,7 +11,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import dev.vengateshm.eventhub.navigation.onBoardingNavGraph
-import dev.vengateshm.eventhub.presentation.home.HomeScreen
+import dev.vengateshm.eventhub.presentation.home.MainLanding
 import dev.vengateshm.eventhub.presentation.ui.theme.EventHubTheme
 import dev.vengateshm.eventhub.presentation.ui.theme.Screen
 
@@ -40,7 +40,7 @@ fun MainScreen() {
     ) {
         onBoardingNavGraph(navController = navController)
         composable(Screen.Home.route) {
-            HomeScreen(onLogoutClick = {
+            MainLanding(onLogoutClick = {
                 navController.navigateUp()
             })
         }
