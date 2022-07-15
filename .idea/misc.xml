@@ -4,13 +4,18 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/VengateshM/AndroidProjects/JetPackCompose/EventHub/app/src/main/res/drawable/ic_btn_arrow_circled.xml" value="0.17864583333333334" />
+        <entry key="..\:/VengateshM/Projects/Android/Declarative/EventHub/app/src/main/res/drawable/ic_art.xml" value="0.2055" />
         <entry key="..\:/VengateshM/Projects/Android/Declarative/EventHub/app/src/main/res/drawable/ic_bottom_nav_compass.xml" value="0.185" />
         <entry key="..\:/VengateshM/Projects/Android/Declarative/EventHub/app/src/main/res/drawable/ic_bottom_nav_map.xml" value="0.185" />
         <entry key="..\:/VengateshM/Projects/Android/Declarative/EventHub/app/src/main/res/drawable/ic_bottom_nav_profile.xml" value="0.185" />
         <entry key="..\:/VengateshM/Projects/Android/Declarative/EventHub/app/src/main/res/drawable/ic_current_location.xml" value="0.185" />
         <entry key="..\:/VengateshM/Projects/Android/Declarative/EventHub/app/src/main/res/drawable/ic_drawer_upgrade_icon.xml" value="0.177" />
+        <entry key="..\:/VengateshM/Projects/Android/Declarative/EventHub/app/src/main/res/drawable/ic_filter.xml" value="0.2055" />
+        <entry key="..\:/VengateshM/Projects/Android/Declarative/EventHub/app/src/main/res/drawable/ic_food.xml" value="0.2055" />
         <entry key="..\:/VengateshM/Projects/Android/Declarative/EventHub/app/src/main/res/drawable/ic_location_event.xml" value="0.185" />
         <entry key="..\:/VengateshM/Projects/Android/Declarative/EventHub/app/src/main/res/drawable/ic_locaton_event.xml" value="0.15" />
+        <entry key="..\:/VengateshM/Projects/Android/Declarative/EventHub/app/src/main/res/drawable/ic_music.xml" value="0.2055" />
+        <entry key="..\:/VengateshM/Projects/Android/Declarative/EventHub/app/src/main/res/drawable/ic_sports.xml" value="0.2055" />
       </map>
     </option>
   </component>

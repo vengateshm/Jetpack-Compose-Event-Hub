@@ -10,6 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -19,13 +20,17 @@ import dev.vengateshm.eventhub.presentation.ui.theme.Color_8A8D9F
 fun Chip(
     bgColor: Color = Color.White,
     @DrawableRes iconRes: Int,
+    iconTint: Color? = null,
     text: String,
     textColor: Color = Color_8A8D9F,
 ) {
     Row(modifier = Modifier
         .background(bgColor, shape = RoundedCornerShape(25.dp))
         .padding(all = 8.dp)) {
-        Image(painter = painterResource(id = iconRes), contentDescription = "$text chip icon")
+        Image(
+            painter = painterResource(id = iconRes),
+            contentDescription = "$text chip icon",
+        colorFilter = iconTint?.let { ColorFilter.tint(it) })
         HoriSpace(dp = 16.dp)
         Text(
             text = text,

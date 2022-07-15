@@ -3,16 +3,13 @@ package dev.vengateshm.eventhub.presentation.home
 import androidx.activity.compose.BackHandler
 import androidx.compose.material.DrawerValue
 import androidx.compose.material.ModalDrawer
-import androidx.compose.material.Scaffold
 import androidx.compose.material.rememberDrawerState
 import androidx.compose.runtime.*
 import androidx.compose.ui.graphics.Color
-import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import dev.vengateshm.eventhub.presentation.event.EventListScreen
-import dev.vengateshm.eventhub.presentation.home.bottomNav.BottomBar
 import dev.vengateshm.eventhub.presentation.home.drawer.Drawer
 import dev.vengateshm.eventhub.presentation.home.drawer.DrawerItem
 import dev.vengateshm.eventhub.presentation.map.MapScreen
@@ -154,59 +151,17 @@ fun MainLanding(onLogoutClick: () -> Unit) {
                     })
             }
             composable(route = Screen.Events.route) {
-                EventListScreen(navController = navController,)
+                EventListScreen(navController = navController)
             }
             composable(route = Screen.Map.route) {
-                MapScreen(navController = navController,)
+                MapScreen(navController = navController)
             }
             composable(route = Screen.MyProfile.route) {
                 ProfileScreen()
             }
             composable(route = Screen.Notification.route) {
-                NotificationListScreen(navController = navController,)
+                NotificationListScreen(navController = navController)
             }
         }
-    }
-}
-
-@Composable
-fun ExploreScreen(
-    navController: NavController,
-    onToolBarMenuIconClick: () -> Unit,
-    onNotificationIconClick: () -> Unit,
-) {
-    Scaffold(
-        topBar = {
-            HomeToolBar(
-                onToolBarMenuIconClick = {
-                    onToolBarMenuIconClick()
-                },
-                onNotificationIconClick = {
-                    onNotificationIconClick()
-                }
-            )
-        },
-        bottomBar = {
-            BottomBar(
-                navController = navController,
-                onBottomBarItemClick = {
-                    when (it.title) {
-                        "Explore" -> {
-                            navController.navigate(Screen.Home.route)
-                        }
-                        "Events" -> {
-                            navController.navigate(Screen.Events.route)
-                        }
-                        "Map" -> {
-                            navController.navigate(Screen.Map.route)
-                        }
-                        "Profile" -> {
-                            navController.navigate(Screen.MyProfile.route)
-                        }
-                    }
-                })
-        }
-    ) {
-
     }
 }
